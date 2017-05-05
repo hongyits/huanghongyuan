@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<!-- 心情(mood)配置 -->
+	<package name="moo" namespace="/" extends="common">
+		<action name="moodAction_*" class="com.huanghongyuan.mood.web.action.MoodAction"   method="{1}">
+			<result name="findAll">/WEB-INF/pages/main.jsp</result>
+			<result name="saveMood" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">moodAction_findAll</param>
+			</result>
+			<result name="login" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">moodAction_findAll</param>
+			</result>
+			<result name="zhuxiao" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">moodAction_findAll</param>
+			</result>
+			<result name="delMood" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">moodAction_findAll</param>
+			</result>
+		</action>
+	</package> 
+</struts>

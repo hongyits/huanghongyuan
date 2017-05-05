@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.huanghongyuan.comment.domain.CrmComment" table="comment">
+		<id name="commentId">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="commentContent"></property>
+		<property name="commentSendDate"></property>
+		<property name="commentName"></property>
+		<!-- 多对一  多个回复属于一个心情 -->
+		<many-to-one name="mood" class="com.huanghongyuan.mood.domain.CrmMood" column="moodId" ></many-to-one>
+	</class>
+</hibernate-mapping>
